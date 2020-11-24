@@ -599,9 +599,6 @@ climberobj::climberobj(uint64_t areasize, uint64_t attacktype, int climberenable
                                         return -1;
                                     }
                                 }
-             if(index == this->maxpagenums-1){
-                        printf("maptoweak:%lu\n",bemapaddr);
-                    }
 
                                 this->maplist[bemapaddr] = lifenowlist[(index)].addr;
                                 this->reverselist[lifenowlist[(index)].addr] = bemapaddr;
@@ -641,13 +638,6 @@ climberobj::climberobj(uint64_t areasize, uint64_t attacktype, int climberenable
                             return -1;
                         }
                     }
-                    //#print(bemapaddr)
-                    if(index == this->maxpagenums-1){
-                        printf("maptostrong:%lu\n",bemapaddr);
-                    }
-                    if(index == 0){
-                        printf("maptoweak:%lu,%lu\n",bemapaddr,lifenowlist[(index)].addr);
-                    }
                     this->maplist[bemapaddr] = lifenowlist[(index)].addr;
                     this->reverselist[lifenowlist[(index)].addr] = bemapaddr;
                     this->climbla2hot[bemapaddr] = (index);
@@ -656,7 +646,6 @@ climberobj::climberobj(uint64_t areasize, uint64_t attacktype, int climberenable
                 }
             }
             this->remaptimes = this->remaptimes + 1;
-            //#print('lifenowlist:%d'%lifenowlist[(len(lifenowlist) - 1 - mapindex)][0])
             this->bloomfilter1->clear();
             this->bloomfilter2->clear();
             return 1;

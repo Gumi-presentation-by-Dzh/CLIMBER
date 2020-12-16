@@ -30,7 +30,7 @@ Use 'make' to compile source codes.
 ```
 * X is wear-leveling schems; 'attack' is running with Inconsistent Write Attack (doesn't need trace files); 'noattack' is running without Inconsistent Write Attack (need trace files).
 * Arg1 and arg2 are used to enable our climber and WPRM schemes. Arg3 is climber-regionsize(10-19) and arg4 is climber-threshold. These args(1,2,3,4) are useless for TWL. CLIMBER can be running without other schemes by setting arg1 = 2 for attack_hc_climber and noattack_hc_climber.
-
+* Zsim-NVMain： In config file, set sys.mem.isclimber = 1 and sys.mem.climbtype = "bwl" to enable BWL wear-leveling scheme. Set sys.mem.isclimber = 1 and sys.mem.climbtype = "climber" to enable CLIMBER scheme. Running without sys.mem.isclimber and sys.mem.climbtype to envalute no-wear-leveling scheme.
 **4.Result**  
 &#160; &#160; &#160; &#160; The wear rate result is recorded in X_c.dat and the overhead result is recorded in X_c.log.
 
